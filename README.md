@@ -36,7 +36,7 @@
 
 ## Selected open source contributions
 
-- [CPython](https://8vasu.me/cpython-pty)
-- [FreeBSD C stdlib](https://8vasu.me/freebsd-winsize)
-- [util-linux](https://8vasu.me/util-linux-script)
-- [SymPy LaTeX matrix parser](https://8vasu.me/sympy-matrix)
+- [**CPython terminal control**](https://8vasu.me/cpython-pty)
+- [**FreeBSD C stdlib**](https://8vasu.me/freebsd-winsize)
+- [**util-linux script(1)**](https://8vasu.me/util-linux-script)
+- [**SymPy LaTeX matrix parser**](https://8vasu.me/sympy-matrix)
