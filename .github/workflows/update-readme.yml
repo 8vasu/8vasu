@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Clear existing SVGs
+        run: rm -rf langs/
+
       - name: Update README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
