@@ -12,6 +12,7 @@ import os
 import random
 import re
 import requests
+import time
 
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 USERNAME = "8vasu"
@@ -29,8 +30,6 @@ CHAR_WIDTH = 7.5
 PAD = 4
 VB_H = 16
 BASELINE = 12
-IMG_HEIGHT = 16
-
 
 def random_dark_color():
     """Generate a random color with guaranteed contrast on white background."""
@@ -45,7 +44,7 @@ def make_svg(text, color):
     vb_w = int(len(text) * CHAR_WIDTH + PAD)
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'viewBox="0 0 {vb_w} {VB_H}" width="{vb_w}" height="{VB_H}">'
+        f'viewBox="0 0 {vb_w} {VB_H}" width="{vb_w}">'
         f'<text x="0" y="{BASELINE}" font-family="monospace" '
         f'font-size="{FONT_SIZE}" font-weight="bold" fill="{color}">{text}</text>'
         f'</svg>'
@@ -81,7 +80,7 @@ def render_repo_card(data):
     url = data["html_url"]
     lang_names = fetch_languages(data["languages_url"])
     badges = " ".join(
-        f'<img alt="{l}" src="{ensure_lang(l)}" height="{IMG_HEIGHT}"/>'
+        f'<img alt="{l}" src="{ensure_lang(l)}?v={int(time.time())}"/>'
         for l in lang_names
     )
     parts = [f"[**{name}**]({url})"]
