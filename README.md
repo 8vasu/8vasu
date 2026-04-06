@@ -1,4 +1,4 @@
-[soumendraganguly.com](https://soumendraganguly.com)
+- [CV](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
 
 ---
 
