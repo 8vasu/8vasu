@@ -53,7 +53,7 @@ def build_section(repos):
         except Exception as e:
             print(f"Warning: could not fetch {repo_name}: {e}")
             cards.append(f"- [**{repo_name}**](https://github.com/{USERNAME}/{repo_name})")
-    return "\n".join(cards)
+    return "\n\n".join(cards)
 
 
 def update_readme(readme_path="README.md", repos_path="repos.json"):
