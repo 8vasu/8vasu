@@ -28,6 +28,7 @@ HEADERS = {
 FONT_SIZE = 12
 CHAR_WIDTH = 7.5
 PAD = 4
+PAD_LEFT = 3
 VB_H = 16
 BASELINE = 12
 
@@ -45,7 +46,7 @@ def make_svg(text, color):
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'viewBox="0 0 {vb_w} {VB_H}" width="{vb_w}">'
-        f'<text x="{PAD // 2}" y="{BASELINE}" font-family="monospace" '
+        f'<text x="{PAD_LEFT}" y="{BASELINE}" font-family="monospace" '
         f'font-size="{FONT_SIZE}" font-weight="bold" fill="{color}">{text}</text>'
         f'</svg>'
     )
