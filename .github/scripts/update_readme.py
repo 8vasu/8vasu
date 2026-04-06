@@ -37,7 +37,7 @@ def render_repo_card(data):
     description = data.get("description") or ""
     url = data["html_url"]
     languages = " · ".join(f"**{l}**" for l in fetch_languages(data["languages_url"]))
-    lines = [f"⬡ [{name}]({url})"]
+    lines = [f"[**{name}**]({url})"]
     if description:
         lines.append(f"_{description}_")
     if languages:
