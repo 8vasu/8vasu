@@ -2,6 +2,8 @@
 
 ---
 
+**Selected projects**
+
 <!-- REPOS_START -->
 [**stty.py**](https://github.com/8vasu/stty.py)\
 A Python library for manipulating terminal settings in the style of POSIX stty(1).\
