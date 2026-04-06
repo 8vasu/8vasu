@@ -80,7 +80,7 @@ def render_repo_card(data):
     description = data.get("description") or ""
     url = data["html_url"]
     lang_names = fetch_languages(data["languages_url"])
-    badges = " | ".join(
+    badges = " │ ".join(
         f'<img alt="{l}" src="{ensure_lang(l)}?v={int(time.time())}"/>'
         for l in lang_names
     )
