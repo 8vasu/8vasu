@@ -1,6 +1,6 @@
-# [**CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
+# Soumendra Ganguly
 
----
+[**PDF CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
 
 ## Selected projects
 
@@ -33,8 +33,6 @@ A command-line-based arXiv.org article browser and batch downloader.\
 Convenient 2 window creation and reorientation system for GNU Emacs.\
 **Emacs Lisp**
 <!-- REPOS_END -->
-
----
 
 ## Selected open source contributions
 
