@@ -1,6 +1,8 @@
 # Soumendra Ganguly
 
-[**PDF CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
+- [**Website**](https://soumendraganguly.com)
+- [**LinkedIn**](https://www.linkedin.com/in/soumendraganguly)
+- [**PDF CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
 
 ## Selected projects
 
