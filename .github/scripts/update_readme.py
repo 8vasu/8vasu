@@ -39,7 +39,7 @@ def render_repo_card(data):
     languages = " · ".join(f"**{l}**" for l in fetch_languages(data["languages_url"]))
     lines = [f"[**{name}**]({url})"]
     if description:
-        lines.append(f"_{description}_")
+        lines.append(f"{description}")
     if languages:
         lines.append(languages)
     return "\\\n".join(lines)
@@ -52,7 +52,7 @@ def build_section(repos):
             cards.append(render_repo_card(fetch_repo(repo_name)))
         except Exception as e:
             print(f"Warning: could not fetch {repo_name}: {e}")
-            cards.append(f"⬡ [{repo_name}](https://github.com/{USERNAME}/{repo_name})")
+            cards.append(f"[**{repo_name}**](https://github.com/{USERNAME}/{repo_name})")
     return "\n\n".join(cards)
 
 
