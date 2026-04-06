@@ -1,8 +1,8 @@
-[**CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
+# [**CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
 
 ---
 
-**Selected projects**
+## Selected projects
 
 <!-- REPOS_START -->
 [**stty.py**](https://github.com/8vasu/stty.py)\
@@ -36,7 +36,7 @@ Convenient 2 window creation and reorientation system for GNU Emacs.\
 
 ---
 
-**Selected open source contributions**
+## Selected open source contributions
 
 - [CPython](https://8vasu.me/cpython-pty)
 - [FreeBSD C stdlib](https://8vasu.me/freebsd-winsize)
