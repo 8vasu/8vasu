@@ -1,0 +1,32 @@
+{
+  "Python": {
+    "color": "#000080",
+    "fg": "#ffffff",
+    "svg": "langs/Python.svg"
+  },
+  "Shell": {
+    "color": "#A97BFF",
+    "fg": "#000000",
+    "svg": "langs/Shell.svg"
+  },
+  "TeX": {
+    "color": "#563d7c",
+    "fg": "#ffffff",
+    "svg": "langs/TeX.svg"
+  },
+  "Lua": {
+    "color": "#701516",
+    "fg": "#ffffff",
+    "svg": "langs/Lua.svg"
+  },
+  "Dockerfile": {
+    "color": "#F7DF1E",
+    "fg": "#000000",
+    "svg": "langs/Dockerfile.svg"
+  },
+  "Emacs Lisp": {
+    "color": "#89E051",
+    "fg": "#000000",
+    "svg": "langs/Emacs Lisp.svg"
+  }
+}
