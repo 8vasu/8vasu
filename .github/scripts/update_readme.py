@@ -24,41 +24,23 @@ HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28",
 }
 
-# Colors with good contrast on white background
 PALETTE = [
-    "#3776AB",  # Python blue
-    "#555555",  # C gray
-    "#00ADD8",  # Go cyan
-    "#7F5AB6",  # purple
-    "#008080",  # teal
-    "#000080",  # navy
-    "#E34C26",  # orange-red
-    "#B07219",  # dark gold
-    "#427819",  # dark green
-    "#c30b4e",  # crimson
-    "#4F5D95",  # slate blue
-    "#2b7489",  # dark cyan
-    "#701516",  # dark red
-    "#563d7c",  # dark purple
-    "#1a1a99",  # dark indigo
-    "#006400",  # dark green 2
-    "#8B4513",  # saddle brown
-    "#4B0082",  # indigo
-    "#2F4F4F",  # dark slate gray
-    "#800000",  # maroon
-    "#556B2F",  # dark olive green
-    "#8B008B",  # dark magenta
-    "#1C6B48",  # forest green
-    "#A0522D",  # sienna
-    "#483D8B",  # dark slate blue
-    "#8B0000",  # dark red 2
-    "#2E8B57",  # sea green
-    "#6A5ACD",  # slate blue 2
-    "#D2691E",  # chocolate
-    "#CD5C5C",  # indian red
-    "#20B2AA",  # light sea green
-    "#C71585",  # medium violet red
+    "#3776AB", "#555555", "#00ADD8", "#7F5AB6", "#008080",
+    "#000080", "#E34C26", "#B07219", "#427819", "#c30b4e",
+    "#4F5D95", "#2b7489", "#701516", "#563d7c", "#1a1a99",
+    "#006400", "#8B4513", "#4B0082", "#2F4F4F", "#800000",
+    "#556B2F", "#8B008B", "#1C6B48", "#A0522D", "#483D8B",
+    "#8B0000", "#2E8B57", "#6A5ACD", "#D2691E", "#CD5C5C",
+    "#20B2AA", "#C71585",
 ]
+
+# SVG dimensions — all sizing decisions live here
+FONT_SIZE = 12
+CHAR_WIDTH = 7.5
+PAD = 4
+VB_H = 16
+BASELINE = 12
+IMG_HEIGHT = 16
 
 
 def load_langs():
@@ -76,43 +58,35 @@ def save_langs(langs):
 def next_color(langs):
     used = {v["color"] for v in langs.values()}
     remaining = [c for c in PALETTE if c not in used]
-    if remaining:
-        return random.choice(remaining)
-    return random.choice(PALETTE)
+    return random.choice(remaining) if remaining else random.choice(PALETTE)
 
 
 def make_svg(text, color):
-    # Approximate width: 7.5px per char, bold font, no background
-    width = int(len(text) * 7.5 + 4)
-    height = 16
-    # vertical-align via dominant-baseline keeps text aligned with surrounding text
+    vb_w = int(len(text) * CHAR_WIDTH + PAD)
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'style="vertical-align: -0.2em;">'
-        f'<text x="0" y="13" font-family="monospace" font-size="12" '
-        f'font-weight="bold" fill="{color}">{text}</text>'
+        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'viewBox="0 0 {vb_w} {VB_H}" width="{vb_w}" height="{VB_H}">'
+        f'<text x="0" y="{BASELINE}" font-family="monospace" '
+        f'font-size="{FONT_SIZE}" font-weight="bold" fill="{color}">{text}</text>'
         f'</svg>'
     )
 
 
 def ensure_lang(lang, langs):
     if lang not in langs:
-        color = next_color(langs)
-        svg_path = f"{LANGS_DIR}/{lang}.svg"
-        langs[lang] = {"color": color, "svg": svg_path}
-
+        langs[lang] = {"color": next_color(langs), "svg": f"{LANGS_DIR}/{lang}.svg"}
     entry = langs[lang]
-    svg_path = entry["svg"]
     os.makedirs(LANGS_DIR, exist_ok=True)
-    svg = make_svg(lang, entry["color"])
-    with open(svg_path, "w") as f:
-        f.write(svg)
-
-    return svg_path
+    with open(entry["svg"], "w") as f:
+        f.write(make_svg(lang, entry["color"]))
+    return entry["svg"]
 
 
 def fetch_repo(repo_name):
-    r = requests.get(f"https://api.github.com/repos/{USERNAME}/{repo_name}", headers=HEADERS, timeout=10)
+    r = requests.get(
+        f"https://api.github.com/repos/{USERNAME}/{repo_name}",
+        headers=HEADERS, timeout=10
+    )
     r.raise_for_status()
     return r.json()
 
@@ -129,7 +103,7 @@ def render_repo_card(data, langs):
     url = data["html_url"]
     lang_names = fetch_languages(data["languages_url"])
     badges = " ".join(
-        f'<img alt="{l}" src="{ensure_lang(l, langs)}" height="14" style="vertical-align: 0.1em;"/>'
+        f'<img alt="{l}" src="{ensure_lang(l, langs)}" height="{IMG_HEIGHT}"/>'
         for l in lang_names
     )
     parts = [f"[**{name}**]({url})"]
@@ -154,23 +128,16 @@ def build_section(repos, langs):
 def update_readme(readme_path="README.md", repos_path="repos.json"):
     with open(repos_path) as f:
         repos = json.load(f)
-
     langs = load_langs()
-
     with open(readme_path) as f:
         content = f.read()
-
-    section = build_section(repos, langs)
-
     content = re.sub(
         r"<!-- REPOS_START -->.*?<!-- REPOS_END -->",
-        f"<!-- REPOS_START -->\n{section}\n<!-- REPOS_END -->",
+        f"<!-- REPOS_START -->\n{build_section(repos, langs)}\n<!-- REPOS_END -->",
         content, flags=re.DOTALL,
     )
-
     with open(readme_path, "w") as f:
         f.write(content)
-
     save_langs(langs)
     print("README updated.")
 
