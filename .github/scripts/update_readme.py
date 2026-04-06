@@ -24,26 +24,40 @@ HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28",
 }
 
-# Curated palette of visually distinct, readable colors (bg, fg)
+# Colors with good contrast on white background
 PALETTE = [
-    ("#3776AB", "#ffffff"),
-    ("#555555", "#ffffff"),
-    ("#00ADD8", "#ffffff"),
-    ("#7F5AB6", "#ffffff"),
-    ("#008080", "#ffffff"),
-    ("#000080", "#ffffff"),
-    ("#E34C26", "#ffffff"),
-    ("#B07219", "#ffffff"),
-    ("#89E051", "#000000"),
-    ("#F7DF1E", "#000000"),
-    ("#DEA584", "#000000"),
-    ("#427819", "#ffffff"),
-    ("#c30b4e", "#ffffff"),
-    ("#4F5D95", "#ffffff"),
-    ("#2b7489", "#ffffff"),
-    ("#701516", "#ffffff"),
-    ("#563d7c", "#ffffff"),
-    ("#A97BFF", "#000000"),
+    "#3776AB",  # Python blue
+    "#555555",  # C gray
+    "#00ADD8",  # Go cyan
+    "#7F5AB6",  # purple
+    "#008080",  # teal
+    "#000080",  # navy
+    "#E34C26",  # orange-red
+    "#B07219",  # dark gold
+    "#427819",  # dark green
+    "#c30b4e",  # crimson
+    "#4F5D95",  # slate blue
+    "#2b7489",  # dark cyan
+    "#701516",  # dark red
+    "#563d7c",  # dark purple
+    "#1a1a99",  # dark indigo
+    "#006400",  # dark green 2
+    "#8B4513",  # saddle brown
+    "#4B0082",  # indigo
+    "#2F4F4F",  # dark slate gray
+    "#800000",  # maroon
+    "#556B2F",  # dark olive green
+    "#8B008B",  # dark magenta
+    "#1C6B48",  # forest green
+    "#A0522D",  # sienna
+    "#483D8B",  # dark slate blue
+    "#8B0000",  # dark red 2
+    "#2E8B57",  # sea green
+    "#6A5ACD",  # slate blue 2
+    "#D2691E",  # chocolate
+    "#CD5C5C",  # indian red
+    "#20B2AA",  # light sea green
+    "#C71585",  # medium violet red
 ]
 
 
@@ -61,39 +75,38 @@ def save_langs(langs):
 
 def next_color(langs):
     used = {v["color"] for v in langs.values()}
-    remaining = [c for c in PALETTE if c[0] not in used]
+    remaining = [c for c in PALETTE if c not in used]
     if remaining:
         return random.choice(remaining)
-    # All palette colors used, pick a random one anyway
     return random.choice(PALETTE)
 
 
-def make_svg(text, bg, fg):
-    width = len(text) * 7 + 12
-    height = 18
+def make_svg(text, color):
+    # Approximate width: 7.5px per char, bold font, no background
+    width = int(len(text) * 7.5 + 4)
+    height = 16
+    # vertical-align via dominant-baseline keeps text aligned with surrounding text
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}">'
-        f'<rect width="{width}" height="{height}" rx="3" fill="{bg}"/>'
-        f'<text x="{width // 2}" y="13" font-family="monospace" font-size="11" '
-        f'fill="{fg}" text-anchor="middle">{text}</text>'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+        f'style="vertical-align: -0.2em;">'
+        f'<text x="0" y="13" font-family="monospace" font-size="12" '
+        f'font-weight="bold" fill="{color}">{text}</text>'
         f'</svg>'
     )
 
 
 def ensure_lang(lang, langs):
     if lang not in langs:
-        bg, fg = next_color(langs)
+        color = next_color(langs)
         svg_path = f"{LANGS_DIR}/{lang}.svg"
-        langs[lang] = {"color": bg, "fg": fg, "svg": svg_path}
+        langs[lang] = {"color": color, "svg": svg_path}
 
     entry = langs[lang]
     svg_path = entry["svg"]
     os.makedirs(LANGS_DIR, exist_ok=True)
-
-    if not os.path.exists(svg_path):
-        svg = make_svg(lang, entry["color"], entry["fg"])
-        with open(svg_path, "w") as f:
-            f.write(svg)
+    svg = make_svg(lang, entry["color"])
+    with open(svg_path, "w") as f:
+        f.write(svg)
 
     return svg_path
 
@@ -116,7 +129,7 @@ def render_repo_card(data, langs):
     url = data["html_url"]
     lang_names = fetch_languages(data["languages_url"])
     badges = " ".join(
-        f'<img alt="{l}" src="{ensure_lang(l, langs)}" height="18"/>'
+        f'<img alt="{l}" src="{ensure_lang(l, langs)}" height="14" style="vertical-align: 0.1em;"/>'
         for l in lang_names
     )
     parts = [f"[**{name}**]({url})"]
