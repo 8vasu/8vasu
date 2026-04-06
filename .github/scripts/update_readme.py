@@ -37,8 +37,12 @@ def render_repo_card(data):
     description = data.get("description") or ""
     url = data["html_url"]
     languages = " · ".join(fetch_languages(data["languages_url"]))
-    lines = [f"**[{name}]({url})**", description, languages]
-    return "  \n".join(line for line in lines if line)
+    parts = [f"**[{name}]({url})**"]
+    if description:
+        parts.append(description)
+    if languages:
+        parts.append(f"_{languages}_")
+    return " — ".join(parts)
 
 
 def build_section(repos):
@@ -49,9 +53,7 @@ def build_section(repos):
         except Exception as e:
             print(f"Warning: could not fetch {repo_name}: {e}")
             cards.append(f"**[{repo_name}](https://github.com/{USERNAME}/{repo_name})**")
-
-    rows = [f"| {cards[i]} | {cards[i+1] if i+1 < len(cards) else ''} |" for i in range(0, len(cards), 2)]
-    return "| | |\n|---|---|\n" + "\n".join(rows)
+    return "\n\n".join(cards)
 
 
 def update_readme(readme_path="README.md", repos_path="repos.json"):
