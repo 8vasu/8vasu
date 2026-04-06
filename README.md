@@ -1,4 +1,4 @@
-- [CV](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
+[**CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
 
 ---
 
