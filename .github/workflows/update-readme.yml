@@ -35,4 +35,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet && git diff --staged --quiet || (git add README.md && git commit -m "chore: update README stats" && git push)
+          git add README.md langs.json langs/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update README and language badges" && git push)
