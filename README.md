@@ -34,7 +34,7 @@ Convenient 2 window creation and reorientation system for GNU Emacs.\
 
 ---
 
-**Selected contributions**
+**Selected open source contributions**
 
 - [CPython](https://8vasu.me/cpython-pty)
 - [FreeBSD C stdlib](https://8vasu.me/freebsd-winsize)
