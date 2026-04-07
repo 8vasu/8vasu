@@ -30,7 +30,14 @@ CHAR_WIDTH = 7.5
 PAD = 4
 PAD_LEFT = 3
 VB_H = 22
-BASELINE = 20
+BASELINE = 18
+
+# Separator SVG
+SEP_W = 6
+SEP_H = 18
+SEP_COLOR = "#aaaaaa"
+SEP_PATH = f"{LANGS_DIR}/sep.svg"
+
 
 def random_dark_color():
     """Generate a random color with guaranteed contrast on white background."""
@@ -50,6 +57,24 @@ def make_svg(text, color):
         f'font-size="{FONT_SIZE}" font-weight="bold" fill="{color}">{text}</text>'
         f'</svg>'
     )
+
+
+def make_sep_svg():
+    cx = SEP_W // 2
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'viewBox="0 0 {SEP_W} {SEP_H}" width="{SEP_W}">'
+        f'<line x1="{cx}" y1="0" x2="{cx}" y2="{SEP_H}" '
+        f'stroke="{SEP_COLOR}" stroke-width="1"/>'
+        f'</svg>'
+    )
+
+
+def ensure_sep():
+    os.makedirs(LANGS_DIR, exist_ok=True)
+    with open(SEP_PATH, "w") as f:
+        f.write(make_sep_svg())
+    return SEP_PATH
 
 
 def ensure_lang(lang):
@@ -75,15 +100,17 @@ def fetch_languages(languages_url):
     return list(r.json().keys())
 
 
-def render_repo_card(data):
+def render_repo_card(data, sep_img):
     name = data["name"]
     description = data.get("description") or ""
     url = data["html_url"]
     lang_names = fetch_languages(data["languages_url"])
-    badges = " │ ".join(
-        f'<img alt="{l}" src="{ensure_lang(l)}?v={int(time.time())}"/>'
+    ts = int(time.time())
+    badge_imgs = [
+        f'<img alt="{l}" src="{ensure_lang(l)}?v={ts}"/>'
         for l in lang_names
-    )
+    ]
+    badges = sep_img.join(badge_imgs)
     parts = [f"[**{name}**]({url})"]
     if description:
         parts.append(f"_{description}_")
@@ -93,10 +120,13 @@ def render_repo_card(data):
 
 
 def build_section(repos):
+    sep_path = ensure_sep()
+    ts = int(time.time())
+    sep_img = f'<img alt="|" src="{sep_path}?v={ts}"/>'
     cards = []
     for repo_name in repos:
         try:
-            cards.append(render_repo_card(fetch_repo(repo_name)))
+            cards.append(render_repo_card(fetch_repo(repo_name), sep_img))
         except Exception as e:
             print(f"Warning: could not fetch {repo_name}: {e}")
             cards.append(f"- [**{repo_name}**](https://github.com/{USERNAME}/{repo_name})")
