@@ -62,6 +62,11 @@ PALETTE = [
 ]
 
 
+def lang_to_filename(lang):
+    """Convert a language name to a safe filename stem."""
+    return lang.replace("C#", "Csharp").replace(" ", "")
+
+
 def random_color():
     return random.choice(PALETTE)
 
@@ -96,7 +101,7 @@ def ensure_sep():
 
 
 def ensure_lang(lang):
-    svg_path = f"{LANGS_DIR}/{lang}.svg"
+    svg_path = f"{LANGS_DIR}/{lang_to_filename(lang)}.svg"
     os.makedirs(LANGS_DIR, exist_ok=True)
     with open(svg_path, "w") as f:
         f.write(make_svg(lang, random_color()))
