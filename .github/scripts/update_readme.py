@@ -6,7 +6,6 @@ Generates SVG badge files for each language encountered.
 Repo list is read from repos.json.
 """
 
-import colorsys
 import json
 import os
 import random
@@ -35,17 +34,36 @@ BASELINE = 18
 # Separator SVG
 SEP_W = 6
 SEP_H = 18
-SEP_COLOR = "#aaaaaa"
+SEP_COLOR = "#333333"
 SEP_PATH = f"{LANGS_DIR}/sep.svg"
 
+PALETTE = [
+    # Reds
+    "#e74c3c", "#c0392b", "#a93226", "#cb4335", "#922b21",
+    # Oranges
+    "#e67e22", "#d35400", "#ba4a00", "#a04000", "#e64a19",
+    # Yellows / Ambers
+    "#f39c12", "#d4ac0d", "#9a7d0a", "#f57f17", "#e65100",
+    # Purples
+    "#8e44ad", "#7d3c98", "#6c3483", "#6a1b9a", "#4a148c",
+    "#5b2c6f", "#9b59b6",
+    # Pinks / Magentas
+    "#e91e63", "#c2185b", "#ad1457", "#880e4f",
+    # Blues
+    "#2980b9", "#1a5276", "#1f618d", "#0277bd", "#1c3f6e",
+    # Greens
+    "#27ae60", "#1e8449", "#33691e", "#558b2f",
+    # Teals
+    "#16a085", "#00695c",
+    # Browns
+    "#6d4c41", "#4e342e", "#795548", "#5d4037",
+    # Dark indigos
+    "#1f3a93", "#1a237e", "#283593",
+]
 
-def random_dark_color():
-    """Generate a random color with guaranteed contrast on white background."""
-    h = random.random()
-    s = random.uniform(0.5, 1.0)
-    l = random.uniform(0.15, 0.40)
-    r, g, b = colorsys.hls_to_rgb(h, l, s)
-    return "#{:02x}{:02x}{:02x}".format(int(r * 255), int(g * 255), int(b * 255))
+
+def random_color():
+    return random.choice(PALETTE)
 
 
 def make_svg(text, color):
@@ -81,7 +99,7 @@ def ensure_lang(lang):
     svg_path = f"{LANGS_DIR}/{lang}.svg"
     os.makedirs(LANGS_DIR, exist_ok=True)
     with open(svg_path, "w") as f:
-        f.write(make_svg(lang, random_dark_color()))
+        f.write(make_svg(lang, random_color()))
     return svg_path
 
 
