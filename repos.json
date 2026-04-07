@@ -1,6 +1,7 @@
 [
     "stty.py",
     "fretplot",
+    "fretplot-mcp",
     "gnn.py",
     "sg-diffusion",
     "compuTeX",
