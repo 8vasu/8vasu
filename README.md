@@ -11,7 +11,7 @@
 </td>
 <td>
 
-<img src="avatar.png"/>
+<img src="avatar.png" width="200"/>
 
 </td>
 </tr>
