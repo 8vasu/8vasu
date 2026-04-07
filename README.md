@@ -1,8 +1,21 @@
 # Soumendra Ganguly
 
+<table>
+<tr>
+<td>
+
 - [**Website**](https://soumendraganguly.com)
 - [**LinkedIn**](https://www.linkedin.com/in/soumendraganguly)
 - [**PDF CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
+
+</td>
+<td>
+
+<img src="avatar.png" width="150"/>
+
+</td>
+</tr>
+</table>
 
 ## Selected projects
 
