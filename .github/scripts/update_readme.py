@@ -35,7 +35,7 @@ BASELINE = 18
 SEP_W = 6
 SEP_H = 18
 SEP_COLOR = "#333333"
-SEP_PATH = f"{LANGS_DIR}/sep.svg"
+SEP_PATH = f"{LANGS_DIR}/_sep_.svg"
 
 PALETTE = [
     # Reds
