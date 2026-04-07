@@ -1,15 +1,15 @@
 # Soumendra Ganguly
 
-<table>
+<table border="0">
 <tr>
-<td>
+<td valign="top" width="75%">
 
 - [**Website**](https://soumendraganguly.com)
 - [**LinkedIn**](https://www.linkedin.com/in/soumendraganguly)
 - [**PDF CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
 
 </td>
-<td>
+<td valign="top" width="25%">
 
 <img src="avatar.png" width="200"/>
 
