@@ -4,6 +4,8 @@
 - [**LinkedIn**](https://www.linkedin.com/in/soumendraganguly)
 - [**PDF CV**](https://soumendraganguly.com/pdf/soumendra-tech_cv.pdf)
 
+<span style="color: #3776AB; font-weight: bold;">Python</span>
+
 ## Selected projects
 
 <!-- REPOS_START -->
