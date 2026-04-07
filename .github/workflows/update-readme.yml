@@ -27,7 +27,7 @@ jobs:
         run: pip install requests
 
       - name: Clear existing SVGs
-        run: rm -rf langs/
+        run: rm -rf lang_badges/
 
       - name: Update README
         env:
@@ -38,5 +38,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md langs/
+          git add README.md lang_badges/
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update README and language badges" && git push)

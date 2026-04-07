@@ -15,7 +15,7 @@ import time
 
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 USERNAME = "8vasu"
-LANGS_DIR = "langs"
+LANGS_DIR = "lang_badges"
 
 HEADERS = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
