@@ -30,7 +30,7 @@ CHAR_WIDTH = 7.5
 PAD = 4
 PAD_LEFT = 3
 VB_H = 16
-BASELINE = 16
+BASELINE = 14
 
 def random_dark_color():
     """Generate a random color with guaranteed contrast on white background."""
