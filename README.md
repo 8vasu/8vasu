@@ -1,6 +1,6 @@
 # Soumendra Ganguly
 
-<img src="avatar.png" height="110" align="right"/>
+<img src="avatar.png" height="200" align="right"/>
 
 - [**Website**](https://soumendraganguly.com)
 - [**LinkedIn**](https://www.linkedin.com/in/soumendraganguly)
