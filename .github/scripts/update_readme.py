@@ -1,10 +1,20 @@
-#!/usr/bin/env python3
-"""
-update_readme.py
-Fetches repo description and languages from GitHub API and updates README.md.
-Generates SVG badge files for each language encountered.
-Repo list is read from repos.json.
-"""
+#!/usr/bin/python3
+
+# update_readme.py - Populate README.md for GitHub profile page.
+# Copyright (C) 2026 Soumendra Ganguly
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import json
 import os
