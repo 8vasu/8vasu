@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# update_readme.py - Populate README.md for GitHub profile page.
+# update_readme.py - Populate README.md for GitHub profile page of user 8vasu.
 # Copyright (C) 2026 Soumendra Ganguly
 
 # This program is free software: you can redistribute it and/or modify
