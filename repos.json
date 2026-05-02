@@ -2,6 +2,7 @@
     "stty.py",
     "fretplot",
     "fretplot-mcp",
+    "best",
     "wasm-regex-tree",
     "gnn.py",
     "sg-diffusion",
