@@ -9,31 +9,31 @@
 ## Selected projects
 
 <!-- REPOS_START -->
-- [**stty.py**](https://github.com/8vasu/stty.py)
+- [**stty.py**](https://github.com/8vasu/stty.py) _A Python library for manipulating terminal settings in the style of POSIX stty(1)._ <img alt="Python" src="lang_badges/Python.svg?v=1779543166"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="Shell" src="lang_badges/Shell.svg?v=1779543166"/>
 
-- [**fretplot**](https://github.com/8vasu/fretplot)
+- [**fretplot**](https://github.com/8vasu/fretplot) _Music theory-aware LuaTeX package and metalanguage for batch generation and fine-tuned creation of scale and chord diagrams for plucked string instruments, such as the guitar._ <img alt="TeX" src="lang_badges/TeX.svg?v=1779543166"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="Lua" src="lang_badges/Lua.svg?v=1779543166"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="Shell" src="lang_badges/Shell.svg?v=1779543166"/>
 
-- [**fretplot-mcp**](https://github.com/8vasu/fretplot-mcp) _MCP server with capability to generate fretplot code from natural language descriptions of musical scales and chord voicings._ <img alt="Go" src="lang_badges/Go.svg?v=1779538966"/>
+- [**fretplot-mcp**](https://github.com/8vasu/fretplot-mcp) _MCP server with capability to generate fretplot code from natural language descriptions of musical scales and chord voicings._ <img alt="Go" src="lang_badges/Go.svg?v=1779543167"/>
 
-- [**best**](https://github.com/8vasu/best) _A statically typed Lisp, implemented in POSIX {lex(1), yacc(1)} and Rust._ <img alt="Rust" src="lang_badges/Rust.svg?v=1779538967"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Yacc" src="lang_badges/Yacc.svg?v=1779538967"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Lex" src="lang_badges/Lex.svg?v=1779538967"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Makefile" src="lang_badges/Makefile.svg?v=1779538967"/>
+- [**best**](https://github.com/8vasu/best)
 
-- [**wasm-regex-tree**](https://github.com/8vasu/wasm-regex-tree) _WebAssembly visualizer for Rust regular expression Abstract Syntax Trees._ <img alt="Rust" src="lang_badges/Rust.svg?v=1779538967"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="HTML" src="lang_badges/HTML.svg?v=1779538967"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="CSS" src="lang_badges/CSS.svg?v=1779538967"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="JavaScript" src="lang_badges/JavaScript.svg?v=1779538967"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Makefile" src="lang_badges/Makefile.svg?v=1779538967"/>
+- [**wasm-regex-tree**](https://github.com/8vasu/wasm-regex-tree) _WebAssembly visualizer for Rust regular expression Abstract Syntax Trees._ <img alt="Rust" src="lang_badges/Rust.svg?v=1779543168"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="HTML" src="lang_badges/HTML.svg?v=1779543168"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="CSS" src="lang_badges/CSS.svg?v=1779543168"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="JavaScript" src="lang_badges/JavaScript.svg?v=1779543168"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="Makefile" src="lang_badges/Makefile.svg?v=1779543168"/>
 
-- [**gnn.py**](https://github.com/8vasu/gnn.py)
+- [**gnn.py**](https://github.com/8vasu/gnn.py) _Comparative study of Graph Neural Networks across Euclidean, spherical, and hyperbolic geometries, with GPU acceleration and a real-time web dashboard._ <img alt="Python" src="lang_badges/Python.svg?v=1779543168"/>
 
-- [**sg-diffusion**](https://github.com/8vasu/sg-diffusion) _A Stable Diffusion-based command-line image generator for *nix._ <img alt="Python" src="lang_badges/Python.svg?v=1779538968"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Shell" src="lang_badges/Shell.svg?v=1779538968"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Dockerfile" src="lang_badges/Dockerfile.svg?v=1779538968"/>
+- [**sg-diffusion**](https://github.com/8vasu/sg-diffusion) _A Stable Diffusion-based command-line image generator for *nix._ <img alt="Python" src="lang_badges/Python.svg?v=1779543168"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="Shell" src="lang_badges/Shell.svg?v=1779543168"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="Dockerfile" src="lang_badges/Dockerfile.svg?v=1779543168"/>
 
-- [**compuTeX**](https://github.com/8vasu/compuTeX) _Convert LaTeX → SymPy → evaluate → LaTeX in Python and GNU Emacs._ <img alt="Python" src="lang_badges/Python.svg?v=1779538969"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Emacs Lisp" src="lang_badges/EmacsLisp.svg?v=1779538969"/>
+- [**compuTeX**](https://github.com/8vasu/compuTeX)
 
-- [**paper.py**](https://github.com/8vasu/paper.py) _A command-line-based arXiv.org article browser and batch downloader._ <img alt="Python" src="lang_badges/Python.svg?v=1779538969"/>
+- [**paper.py**](https://github.com/8vasu/paper.py) _A command-line-based arXiv.org article browser and batch downloader._ <img alt="Python" src="lang_badges/Python.svg?v=1779543169"/>
 
-- [**2windows.el**](https://github.com/8vasu/2windows.el) _Convenient 2 window creation and reorientation system for GNU Emacs._ <img alt="Emacs Lisp" src="lang_badges/EmacsLisp.svg?v=1779538970"/>
+- [**2windows.el**](https://github.com/8vasu/2windows.el) _Convenient 2 window creation and reorientation system for GNU Emacs._ <img alt="Emacs Lisp" src="lang_badges/EmacsLisp.svg?v=1779543170"/>
 
-- [**httpDex**](https://github.com/8vasu/httpDex) _Pokedex using C# backend (ASP.NET Core, Entity Framework Core), SQLite, and GitHub Codespaces._ <img alt="C#" src="lang_badges/Csharp.svg?v=1779538970"/>
+- [**httpDex**](https://github.com/8vasu/httpDex) _Pokedex using C# backend (ASP.NET Core, Entity Framework Core), SQLite, and GitHub Codespaces._ <img alt="C#" src="lang_badges/Csharp.svg?v=1779543170"/>
 
-- [**power-opsd-dk1**](https://github.com/8vasu/power-opsd-dk1) _Ingest hourly Danish electricity prices (DK1) from OPSD, store in TimescaleDB, run quadratic optimization, and plot results._ <img alt="Python" src="lang_badges/Python.svg?v=1779538971"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Makefile" src="lang_badges/Makefile.svg?v=1779538971"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="Dockerfile" src="lang_badges/Dockerfile.svg?v=1779538971"/>
+- [**power-opsd-dk1**](https://github.com/8vasu/power-opsd-dk1) _Ingest hourly Danish electricity prices (DK1) from OPSD, store in TimescaleDB, run quadratic optimization, and plot results._ <img alt="Python" src="lang_badges/Python.svg?v=1779543170"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="Makefile" src="lang_badges/Makefile.svg?v=1779543170"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="Dockerfile" src="lang_badges/Dockerfile.svg?v=1779543170"/>
 
-- [**8vasu.github.io**](https://github.com/8vasu/8vasu.github.io) _Hugo-generated source for https://soumendraganguly.com._ <img alt="HTML" src="lang_badges/HTML.svg?v=1779538971"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="JavaScript" src="lang_badges/JavaScript.svg?v=1779538971"/><img alt="|" src="lang_badges/_sep_.svg?v=1779538965"/><img alt="CSS" src="lang_badges/CSS.svg?v=1779538971"/>
+- [**8vasu.github.io**](https://github.com/8vasu/8vasu.github.io) _Hugo-generated source for https://soumendraganguly.com._ <img alt="HTML" src="lang_badges/HTML.svg?v=1779543171"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="JavaScript" src="lang_badges/JavaScript.svg?v=1779543171"/><img alt="|" src="lang_badges/_sep_.svg?v=1779543166"/><img alt="CSS" src="lang_badges/CSS.svg?v=1779543171"/>
 
 - [**8vasu**](https://github.com/8vasu/8vasu)
 <!-- REPOS_END -->
