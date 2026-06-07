@@ -2,6 +2,7 @@
     "stty.py",
     "fretplot",
     "fretplot-mcp",
+    "SipHash",
     "best",
     "wasm-regex-tree",
     "gnn.py",
