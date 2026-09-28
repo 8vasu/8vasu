@@ -6,6 +6,7 @@
     "best",
     "wasm-regex-tree",
     "gnn.py",
+    "sg-music-gen",
     "sg-diffusion",
     "compuTeX",
     "paper.py",
