@@ -6,6 +6,7 @@
     "best",
     "wasm-regex-tree",
     "gnn.py",
+    "geomon",
     "sg-music-gen",
     "sg-diffusion",
     "compuTeX",
